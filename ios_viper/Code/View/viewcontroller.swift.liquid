@@ -1,0 +1,47 @@
+//
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+
+class {{ module_info.name }}ViewController: BaseViewController {
+
+    var presenter: {{ module_info.name }}PresenterProtocol!
+
+    private lazy var containerView = makeContainerView()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        makeConstraints()
+
+    }
+
+    // MARK: - make constraints
+
+    private func makeConstraints() {
+        ontainerView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+    }
+    
+    // MARK: - Lazy Initializations
+
+    private func makeContainerView() -> UIView {
+        let containerView = UIView()
+        view.addSubview(containerView)
+        return containerView
+    }
+    
+}
+
+// MARK: - {{module_info.name}}ViewProtocol
+
+extension {{ module_info.name }}ViewController: {{module_info.name}}ViewProtocol { }
+
+// MARK: - Private
+
+private extension {{ module_info.name }}ViewController { }
