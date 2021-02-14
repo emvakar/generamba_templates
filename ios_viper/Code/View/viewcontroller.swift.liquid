@@ -7,12 +7,12 @@
 //
 
 import UIKit
-import SnapKit
-import ESUIHelper
 
 class {{ module_info.name }}ViewController: BaseViewController {
 
     var presenter: {{ module_info.name }}PresenterProtocol!
+
+    private lazy var containerView = makeContainerView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,13 +23,25 @@ class {{ module_info.name }}ViewController: BaseViewController {
     // MARK: - make constraints
 
     private func makeConstraints() {
-
+        ontainerView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
     }
     
     // MARK: - Lazy Initializations
 
+    private func makeContainerView() -> UIView {
+        let containerView = UIView()
+        view.addSubview(containerView)
+        return containerView
+    }
+    
 }
 
 // MARK: - {{module_info.name}}ViewProtocol
 
 extension {{ module_info.name }}ViewController: {{module_info.name}}ViewProtocol { }
+
+// MARK: - Private
+
+private extension {{ module_info.name }}ViewController { }
