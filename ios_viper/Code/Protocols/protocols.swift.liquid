@@ -9,13 +9,17 @@
 import UIKit
 
 // PRESENTER -> VIEW
-protocol {{ module_info.name }}ViewProtocol: class { }
 
-// PRESENTER -> WIREFRAME
-protocol {{ module_info.name }}WireFrameProtocol: class { }
+protocol {{ module_info.name }}ViewProtocol: BaseViewProtocol { }
 
 // VIEW -> PRESENTER
-protocol {{ module_info.name }}PresenterProtocol: class { }
+
+protocol {{ module_info.name }}PresenterProtocol: BasePresenterProtocol { }
+
+// PRESENTER -> WIREFRAME
+
+protocol {{ module_info.name }}WireFrameProtocol: BaseWireFrameProtocol { }
 
 // PRESENTER -> INTERACTOR
-protocol {{ module_info.name }}InteractorProtocol: class { }
+
+protocol {{ module_info.name }}InteractorProtocol: BaseInteractorProtocol { }
