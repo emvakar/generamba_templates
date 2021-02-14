@@ -1,0 +1,35 @@
+//
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+import SnapKit
+import ESUIHelper
+
+class {{ module_info.name }}ViewController: BaseViewController {
+
+    var presenter: {{ module_info.name }}PresenterProtocol!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        makeConstraints()
+
+    }
+
+    // MARK: - make constraints
+
+    private func makeConstraints() {
+
+    }
+    
+    // MARK: - Lazy Initializations
+
+}
+
+// MARK: - {{module_info.name}}ViewProtocol
+
+extension {{ module_info.name }}ViewController: {{module_info.name}}ViewProtocol { }
