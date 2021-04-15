@@ -18,6 +18,15 @@ class {{ module_info.name }}ViewController: BaseViewController {
         super.viewDidLoad()
         makeConstraints()
 
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.text = "{{ module_info.name }}"
+        label.textAlignment = .center
+        containerView.addSubview(label)
+        label.snp.makeConstraints { (make) in
+            make.centerY.equalToSuperview()
+            make.left.right.equalToSuperview().inset(24)
+        }
     }
 
     // MARK: - make constraints
