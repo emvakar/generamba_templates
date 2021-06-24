@@ -2,7 +2,7 @@
 //  {{ module_info.file_name }}
 //  {{ module_info.project_name }}
 //
-//  Created by {{ developer.name }} on {{ date }}.
+//  Created by {{ developer.name }} on {{ date | date: "%d.%m.%Y" }}.
 //  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
 //
 
@@ -10,11 +10,19 @@ import UIKit
 
 // PRESENTER -> VIEW
 
-protocol {{ module_info.name }}ViewProtocol: BaseViewProtocol { }
+protocol {{ module_info.name }}ViewProtocol: BaseViewProtocol {
+
+    func setupInitialState()
+    
+ }
 
 // VIEW -> PRESENTER
 
-protocol {{ module_info.name }}PresenterProtocol: BasePresenterProtocol { }
+protocol {{ module_info.name }}PresenterProtocol: BasePresenterProtocol { 
+
+    func viewDidLoad()
+
+}
 
 // PRESENTER -> WIREFRAME
 

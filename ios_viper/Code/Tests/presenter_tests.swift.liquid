@@ -2,23 +2,41 @@
 //  {{ module_info.file_name }}
 //  {{ module_info.project_name }}
 //
-//  Created by {{ developer.name }} on {{ date }}.
+//  Created by {{ developer.name }} on {{ date | date: "%d.%m.%Y" }}.
 //  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
 //
 
 import XCTest
-@testable import {{ module_info.project_name }}
+@testable import {{ module_info.project_name | replace: ' ', '_' }}
 
-class {{ module_info.name }}Tests: XCTestCase {
-    
+class {{ module_info.name }}PresenterTest: XCTestCase {
+
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        super.setUp()
+
     }
-    
+
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        super.tearDown()
+
     }
-    
+
+    class MockInteractor: {{ module_info.name }}InteractorProtocol {
+
+    }
+
+    class MockWireFrame: {{ module_info.name }}WireFrameProtocol {
+
+    }
+
+    class MockViewController: BaseViewController, {{ module_info.name }}ViewProtocol {
+
+        func setupInitialState() {
+
+        }
+
+    }
+
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
