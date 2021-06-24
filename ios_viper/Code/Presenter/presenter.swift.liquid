@@ -9,8 +9,8 @@
 class {{ module_info.name }}Presenter: BasePresenter {
 
     weak var view: {{ module_info.name }}ViewProtocol?
-    private var wireFrame: {{ module_info.name }}WireFrameProtocol
-    private var interactor: {{ module_info.name }}InteractorProtocol
+    var wireFrame: {{ module_info.name }}WireFrameProtocol
+    var interactor: {{ module_info.name }}InteractorProtocol
 
     init(view: {{ module_info.name }}ViewProtocol, wireFrame: {{ module_info.name }}WireFrameProtocol, interactor: {{ module_info.name }}InteractorProtocol) {
         self.view = view
