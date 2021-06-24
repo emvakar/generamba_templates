@@ -24,30 +24,31 @@ class {{ module_info.name }}ResolverTests: XCTestCase {
     func testResolverModuleForViewController() {
 
         //given
-        let viewController = {{ module_info.name }}ViewControllerMock()
         let resolver = DIResolver()
 
         //when
-        let module = resolver.present{{ module_info.name }}ViewController()
+        let module = resolver.present{{ module_info.name }}ViewController() as? {{ module_info.name }}ViewController
 
         //then
-        // XCTAssertNotNil(viewController.output, "{{ module_info.name }}ViewController is nil after configuration")
-        // XCTAssertTrue(viewController.output is {{ module_info.name }}Presenter, "output is not {{ module_info.name }}Presenter")
+        XCTAssertNotNil(module as? BaseViewController, "{{ module_info.name }}ViewController is not subclass of BaseViewController")
+        XCTAssertNotNil(module, "{{ module_info.name }}ViewController is nil after configuration")
+        XCTAssertTrue(module!.presenter is {{ module_info.name }}Presenter, "presenter is not {{ module_info.name }}Presenter")
 
-        // let presenter: {{ module_info.name }}Presenter = viewController.output as! {{ module_info.name }}Presenter
-        // XCTAssertNotNil(presenter.view, "view in {{ module_info.name }}Presenter is nil after configuration")
-        // XCTAssertNotNil(presenter.router, "router in {{ module_info.name }}Presenter is nil after configuration")
-        // XCTAssertTrue(presenter.router is {{ module_info.name }}Router, "router is not {{ module_info.name }}Router")
+        let presenter: {{ module_info.name }}Presenter = module!.presenter as! {{ module_info.name }}Presenter
+        XCTAssertNotNil(presenter.view, "view in {{ module_info.name }}Presenter is nil after configuration")
+        XCTAssertNotNil(presenter.wireFrame, "router in {{ module_info.name }}Presenter is nil after configuration")
+        XCTAssertTrue(presenter.wireFrame is {{ module_info.name }}WireFrame, "WireFrame is not {{ module_info.name }}WireFrame")
+        XCTAssertTrue(presenter.interactor is {{ module_info.name }}Interactor, "{{ module_info.name }}Interactor is not {{ module_info.name }}Interactor")
 
-        // let interactor: {{ module_info.name }}Interactor = presenter.interactor as! {{ module_info.name }}Interactor
-        // XCTAssertNotNil(interactor.output, "output in {{ module_info.name }}Interactor is nil after configuration")
+        let interactor: {{ module_info.name }}Interactor? = presenter.interactor as? {{ module_info.name }}Interactor
+        XCTAssertNotNil(interactor , "{{ module_info.name }}Interactor is nil after configuration")
     }
 
-    class {{ module_info.name }}ViewControllerMock: {{ module_info.name }}ViewController {
+    class {{ module_info.name }}ViewControllerMock: BaseViewController, {{ module_info.name }}ViewProtocol {
 
         var setupInitialStateDidCall = false
 
-        override func setupInitialState() {
+        func setupInitialState() {
             setupInitialStateDidCall = true
         }
     }
