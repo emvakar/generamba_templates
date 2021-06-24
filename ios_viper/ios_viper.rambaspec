@@ -1,9 +1,9 @@
 # Template information section
-name: ios_viper
-summary: MY VIPER MODEL GENERATOR
-author: Emil Karimov
-version: 1.0.0
-license: MIT
+name: "ios_viper"
+summary: "MY VIPER MODEL GENERATOR"
+author: "Emil Karimov"
+version: "1.1.0"
+license: "MIT"
 
 # The declarations for code files
 code_files:
@@ -28,7 +28,21 @@ code_files:
 
 # The declarations for test files
 test_files:
-- {name: +Tests.swift, path: Code/Tests/Tests.swift.liquid}
+
+# Configurators tests
+- {name: Resolver/ResolverTests.swift, path: Code/Tests/resolver_tests.swift.liquid}
+
+# View tests
+- {name: View/ViewTests.swift, path: Code/Tests/view_tests.swift.liquid}
+
+# Presenter tests
+- {name: Presenter/PresenterTests.swift, path: Code/Tests/presenter_tests.swift.liquid}
+
+# Router tests
+- {name: WireFrame/WireFrameTests.swift, path: Code/Tests/wireframe_tests.swift.liquid}
+
+# Interactor tests
+- {name: Interactor/InteractorTests.swift, path: Code/Tests/interactor_tests.swift.liquid}
 
 # Template dependencies
 dependencies:

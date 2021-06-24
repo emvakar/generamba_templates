@@ -1,8 +1,8 @@
 //
-//  {{ module_info.file_name }}
+//  {{ prefix }}{{ module_info.name }}{{ module_info.file_name }}
 //  {{ module_info.project_name }}
 //
-//  Created by {{ developer.name }} on {{ date }}.
+//  Created by {{ developer.name }} on {{ date | date: "%d.%m.%Y" }}.
 //  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
 //
 
@@ -21,4 +21,10 @@ class {{ module_info.name }}Presenter: BasePresenter {
 
 // MARK: - {{module_info.name}}PresenterProtocol
 
-extension {{ module_info.name }}Presenter: {{ module_info.name }}PresenterProtocol { }
+extension {{ module_info.name }}Presenter: {{ module_info.name }}PresenterProtocol { 
+
+    func viewDidLoad() {
+
+    }
+
+}
