@@ -1,0 +1,33 @@
+# Template information section
+name: "ios_base"
+summary: "Base classes for MY OWN VIPER module generator"
+author: "Emil Karimov"
+version: "1.0.0"
+license: "MIT"
+
+# The declarations for code files
+code_files:
+
+# Resolver file
+- {name: BaseModule/DIResolver.swift, path: Code/Base/base_resolver.swift.liquid}
+
+# Protocols layer
+- {name: BaseModule/Protocols.swift, path: Code/Base/base_protocols.swift.liquid}
+
+# View layer
+- {name: BaseModule/ViewController.swift, path: Code/Base/base_view.swift.liquid}
+
+# Presenter layer
+- {name: BaseModule/Presenter.swift, path: Code/Base/base_presenter.swift.liquid}
+
+# WireFrame
+- {name: BaseModule/WireFrame.swift, path: Code/Base/base_wireframe.swift.liquid}
+
+# Interactor layer
+- {name: BaseModule/Interactor.swift, path: Code/Base/base_interactor.swift.liquid}
+
+# The declarations for test files
+test_files:
+
+# Template dependencies
+dependencies:
