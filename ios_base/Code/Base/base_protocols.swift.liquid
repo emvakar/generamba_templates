@@ -1,0 +1,30 @@
+{% include 'header' %}
+
+import UIKit
+
+// MARK: - BaseViewProtocol
+
+protocol BaseViewProtocol: AnyObject {
+
+    func showLoading(message: String?)
+    func hideLoading()
+
+}
+
+// MARK: - BasePresenterProtocol
+
+protocol BasePresenterProtocol: AnyObject {
+
+}
+
+// MARK: - BaseInteractorProtocol
+
+protocol BaseInteractorProtocol: AnyObject {
+
+}
+
+// MARK: - BaseWireFrameProtocol
+
+protocol BaseWireFrameProtocol: AnyObject {
+
+}
