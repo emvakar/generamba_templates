@@ -1,7 +1,7 @@
 {% include 'header' %}
 
 import XCTest
-@testable import {{ module_info.project_name | replace: ' ', '_' }}
+@testable import {{ module_info.project_name | replace: ' ', '_' | replace: '-', '_' }}
 
 class {{ module_info.name }}Tests: XCTestCase {
     
