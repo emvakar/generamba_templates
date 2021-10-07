@@ -1,0 +1,54 @@
+{% include 'header' %}
+
+import Cocoa
+
+class BaseViewController: NSViewController {
+
+    deinit { print(Self.self) }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+
+    override var representedObject: Any? {
+        didSet {
+        // Update the view, if already loaded.
+        }
+    }
+
+
+}
+
+// MARK: - BaseViewProtocol
+
+extension BaseViewController: BaseViewProtocol {
+
+}
+
+// MARK: - Private
+
+extension BaseViewController {
+
+}
