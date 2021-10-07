@@ -12,13 +12,13 @@ import Cocoa
 
 protocol {{ module_info.name }}Protocol {
     
-    func present{{ module_info.name }}ViewController() -> UIViewController
+    func present{{ module_info.name }}ViewController() -> NSViewController
     
 }
 
 extension DIResolver: {{ module_info.name }}Protocol {
     
-    func present{{ module_info.name }}ViewController() -> UIViewController {
+    func present{{ module_info.name }}ViewController() -> NSViewController {
         let viewController = {{ module_info.name }}ViewController()
         let interactor = {{ module_info.name }}Interactor()
         let wireFrame = {{ module_info.name }}WireFrame(resolver: self)

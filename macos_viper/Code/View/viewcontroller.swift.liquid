@@ -12,10 +12,11 @@ class {{ module_info.name }}ViewController: BaseViewController {
         super.viewDidLoad()
         presenter.viewDidLoad()
 
-        let label = UILabel()
-        label.numberOfLines = 0
-        label.text = "{{ module_info.name }}"
-        label.textAlignment = .center
+        let label = NSTextField()
+        label.maximumNumberOfLines = 0
+        label.stringValue = "{{ module_info.name }}"
+        label.isBezeled = false
+        label.isEditable = false
         containerView.addSubview(label)
         label.snp.makeConstraints { (make) in
             make.centerY.equalToSuperview()
@@ -33,8 +34,8 @@ class {{ module_info.name }}ViewController: BaseViewController {
     
     // MARK: - Lazy Initializations
 
-    private func makeContainerView() -> UIView {
-        let containerView = UIView()
+    private func makeContainerView() -> NSView {
+        let containerView = NSView()
         view.addSubview(containerView)
         return containerView
     }
