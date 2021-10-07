@@ -5,17 +5,17 @@ import XCTest
 
 class {{ module_info.name }}ResolverTests: XCTestCase {
 
-    override func setUpWithError() {
-        super.setUpWithError()
+    override func setUpWithError() throws {
+        try super.setUpWithError()
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
-    override func tearDownWithError() {
+    override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
 
-    func testResolverModuleForViewController() {
+    func testResolverModuleForViewController() throws {
 
         //given
         let resolver = DIResolver()
