@@ -1,0 +1,45 @@
+{% include 'header' %}
+
+import XCTest
+@testable import {{ module_info.project_name | replace: ' ', '_' | replace: '-', '_' }}
+
+class {{ module_info.name }}PresenterTest: XCTestCase {
+
+    override func setUpWithError() {
+        super.setUpWithError()
+
+    }
+
+    override func tearDownWithError() {
+        super.tearDownWithError()
+
+    }
+
+    class MockInteractor: {{ module_info.name }}InteractorProtocol {
+
+    }
+
+    class MockWireFrame: {{ module_info.name }}WireFrameProtocol {
+
+    }
+
+    class MockViewController: BaseViewController, {{ module_info.name }}ViewProtocol {
+
+        func setupInitialState() {
+
+        }
+
+    }
+
+    func testExample() {
+        // This is an example of a functional test case.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+    
+    func testPerformanceExample() {
+        // This is an example of a performance test case.
+        self.measure {
+            // Put the code you want to measure the time of here.
+        }
+    }
+}

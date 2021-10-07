@@ -1,0 +1,49 @@
+{% include 'header' %}
+
+import XCTest
+@testable import {{ module_info.project_name | replace: ' ', '_' | replace: '-', '_' }}
+
+class {{ module_info.name }}ResolverTests: XCTestCase {
+
+    override func setUpWithError() {
+        super.setUpWithError()
+        // Put setup code here. This method is called before the invocation of each test method in the class.
+    }
+
+    override func tearDownWithError() {
+        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        super.tearDown()
+    }
+
+    func testResolverModuleForViewController() {
+
+        //given
+        let resolver = DIResolver()
+
+        //when
+        let module = resolver.present{{ module_info.name }}ViewController() as? {{ module_info.name }}ViewController
+
+        //then
+        XCTAssertNotNil(module as? BaseViewController, "{{ module_info.name }}ViewController is not subclass of BaseViewController")
+        XCTAssertNotNil(module, "{{ module_info.name }}ViewController is nil after configuration")
+        XCTAssertTrue(module!.presenter is {{ module_info.name }}Presenter, "presenter is not {{ module_info.name }}Presenter")
+
+        let presenter: {{ module_info.name }}Presenter = module!.presenter as! {{ module_info.name }}Presenter
+        XCTAssertNotNil(presenter.view, "view in {{ module_info.name }}Presenter is nil after configuration")
+        XCTAssertNotNil(presenter.wireFrame, "router in {{ module_info.name }}Presenter is nil after configuration")
+        XCTAssertTrue(presenter.wireFrame is {{ module_info.name }}WireFrame, "WireFrame is not {{ module_info.name }}WireFrame")
+        XCTAssertTrue(presenter.interactor is {{ module_info.name }}Interactor, "{{ module_info.name }}Interactor is not {{ module_info.name }}Interactor")
+
+        let interactor: {{ module_info.name }}Interactor? = presenter.interactor as? {{ module_info.name }}Interactor
+        XCTAssertNotNil(interactor , "{{ module_info.name }}Interactor is nil after configuration")
+    }
+
+    class {{ module_info.name }}ViewControllerMock: BaseViewController, {{ module_info.name }}ViewProtocol {
+
+        var setupInitialStateDidCall = false
+
+        func setupInitialState() {
+            setupInitialStateDidCall = true
+        }
+    }
+}

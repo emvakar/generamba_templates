@@ -1,0 +1,27 @@
+{% include 'header' %}
+
+import Cocoa
+
+// PRESENTER -> VIEW
+
+protocol {{ module_info.name }}ViewProtocol: BaseViewProtocol {
+
+    func setupInitialState()
+    
+ }
+
+// VIEW -> PRESENTER
+
+protocol {{ module_info.name }}PresenterProtocol: BasePresenterProtocol { 
+
+    func viewDidLoad()
+
+}
+
+// PRESENTER -> WIREFRAME
+
+protocol {{ module_info.name }}WireFrameProtocol: BaseWireFrameProtocol { }
+
+// PRESENTER -> INTERACTOR
+
+protocol {{ module_info.name }}InteractorProtocol: BaseInteractorProtocol { }
