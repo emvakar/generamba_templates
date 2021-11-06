@@ -24,7 +24,7 @@ class {{ module_info.name }}ResolverTests: XCTestCase {
         let module = resolver.present{{ module_info.name }}ViewController() as? {{ module_info.name }}ViewController
 
         //then
-        XCTAssertNotNil(module as? BaseViewController, "{{ module_info.name }}ViewController is not subclass of BaseViewController")
+        XCTAssertNotNil(module, "{{ module_info.name }}ViewController is not subclass of BaseViewController")
         XCTAssertNotNil(module, "{{ module_info.name }}ViewController is nil after configuration")
         XCTAssertTrue(module!.presenter is {{ module_info.name }}Presenter, "presenter is not {{ module_info.name }}Presenter")
 
