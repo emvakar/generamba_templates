@@ -11,13 +11,13 @@ import UIKit
 // MARK: - {{ module_info.name }}
 
 protocol {{ module_info.name }}Protocol {
-    
+
     func present{{ module_info.name }}ViewController() -> UIViewController
-    
+
 }
 
 extension DIResolver: {{ module_info.name }}Protocol {
-    
+
     func present{{ module_info.name }}ViewController() -> UIViewController {
         let viewController = {{ module_info.name }}ViewController()
         let interactor = {{ module_info.name }}Interactor()
@@ -26,5 +26,5 @@ extension DIResolver: {{ module_info.name }}Protocol {
         viewController.presenter = presenter
         return viewController
     }
-    
+
 }

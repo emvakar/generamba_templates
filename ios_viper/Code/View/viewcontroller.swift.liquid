@@ -10,6 +10,7 @@ class {{ module_info.name }}ViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         presenter.viewDidLoad()
 
         let label = UILabel()
@@ -30,7 +31,7 @@ class {{ module_info.name }}ViewController: BaseViewController {
             make.edges.equalToSuperview()
         }
     }
-    
+
     // MARK: - Lazy Initializations
 
     private func makeContainerView() -> UIView {
@@ -38,7 +39,7 @@ class {{ module_info.name }}ViewController: BaseViewController {
         view.addSubview(containerView)
         return containerView
     }
-    
+
 }
 
 // MARK: - {{module_info.name}}ViewProtocol
