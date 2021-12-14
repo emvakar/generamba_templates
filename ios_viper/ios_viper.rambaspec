@@ -2,7 +2,7 @@
 name: "ios_viper"
 summary: "MY VIPER MODEL GENERATOR"
 author: "Emil Karimov"
-version: "1.1.0"
+version: "1.1.1"
 license: "MIT"
 
 # The declarations for code files
