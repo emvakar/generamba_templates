@@ -3,7 +3,7 @@
 import XCTest
 @testable import {{ module_info.project_name | replace: ' ', '_' | replace: '-', '_' }}
 
-class {{ module_info.name }}ViewTests: XCTestCase {
+class {{ module_info.name }}ViewTests: BaseTests {
 
     override func setUpWithError() throws {
         try super.setUpWithError()

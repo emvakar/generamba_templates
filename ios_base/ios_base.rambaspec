@@ -2,14 +2,14 @@
 name: "ios_base"
 summary: "Base classes for MY OWN VIPER module generator"
 author: "Emil Karimov"
-version: "1.0.0"
+version: "1.0.1"
 license: "MIT"
 
 # The declarations for code files
 code_files:
 
 # Resolver file
-- {name: Assemply/DIResolver.swift, path: Code/Base/base_resolver.swift.liquid}
+- {name: Assembly/DIResolver.swift, path: Code/Base/base_resolver.swift.liquid}
 
 # Protocols layer
 - {name: Protocols/Protocols.swift, path: Code/Base/base_protocols.swift.liquid}
@@ -28,6 +28,9 @@ code_files:
 
 # The declarations for test files
 test_files:
+
+# Configurators tests
+- {name: Base/BaseTests.swift, path: Code/Tests/base_tests.swift.liquid}
 
 # Template dependencies
 dependencies:

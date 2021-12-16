@@ -4,7 +4,6 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
-
     deinit { }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -18,7 +17,7 @@ class BaseViewController: UIViewController {
     }
 
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
+        super.viewWillDisappear(animated)
 
     }
 
@@ -44,6 +43,7 @@ class BaseViewController: UIViewController {
     func hideKeyboard() {
         view.endEditing(true)
     }
+
 }
 
 // MARK: - BaseViewProtocol
