@@ -6,7 +6,11 @@ class {{ module_info.name }}ViewController: BaseViewController {
 
     var presenter: {{ module_info.name }}PresenterProtocol!
 
+    // MARK: - Lazy params
+
     private lazy var containerView = makeContainerView()
+
+    // MARK: - Actions
 
     override func viewDidLoad() {
         super.viewDidLoad()
