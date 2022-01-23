@@ -30,7 +30,7 @@ code_files:
 test_files:
 
 # Configurators tests
-- {name: Base/BaseTests.swift, path: Code/base_tests.swift.liquid}
+- {name: Base/BaseTests.swift, path: Code/Base/base_tests.swift.liquid}
 
 # Template dependencies
 dependencies:
