@@ -19,33 +19,6 @@ class {{ module_info.name }}ResolverTests: BaseTests {
 
     func testResolverModuleForViewController() {
 
-        // Given
-        let resolver = DIResolver()
-
-        // When
-        let module = resolver.present{{ module_info.name }}ViewController() as? {{ module_info.name }}ViewController
-
-        // Then
-        XCTAssertNotNil(module, "{{ module_info.name }}ViewController is nil after configuration")
-        XCTAssertTrue(module?.presenter is {{ module_info.name }}Presenter, "presenter is not {{ module_info.name }}Presenter")
-
-        let presenter: {{ module_info.name }}Presenter? = module?.presenter as? {{ module_info.name }}Presenter
-        XCTAssertNotNil(presenter?.view, "view in {{ module_info.name }}Presenter is nil after configuration")
-        XCTAssertNotNil(presenter?.wireFrame, "router in {{ module_info.name }}Presenter is nil after configuration")
-        XCTAssertTrue(presenter?.wireFrame is {{ module_info.name }}WireFrame, "WireFrame is not {{ module_info.name }}WireFrame")
-        XCTAssertTrue(presenter?.interactor is {{ module_info.name }}Interactor, "{{ module_info.name }}Interactor is not {{ module_info.name }}Interactor")
-
-        let interactor: {{ module_info.name }}Interactor? = presenter?.interactor as? {{ module_info.name }}Interactor
-        XCTAssertNotNil(interactor, "{{ module_info.name }}Interactor is nil after configuration")
-    }
-
-    class {{ module_info.name }}ViewControllerMock: BaseViewController, {{ module_info.name }}ViewProtocol {
-
-        var setupInitialStateDidCall = false
-
-        func setupInitialState() {
-            setupInitialStateDidCall = true
-        }
     }
 
 }

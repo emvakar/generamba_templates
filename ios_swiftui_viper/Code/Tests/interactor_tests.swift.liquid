@@ -19,9 +19,9 @@ class {{ module_info.name }}InteractorTests: BaseTests {
 
     class MockPresenter: {{ module_info.name }}PresenterProtocol {
 
-        func viewDidLoad() {
+        var isLoading: Bool = false
 
-        }
+        func onAppear() { }
 
     }
 
