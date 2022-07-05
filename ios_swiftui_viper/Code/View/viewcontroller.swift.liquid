@@ -1,0 +1,28 @@
+{% include 'header' %}
+
+import SwiftUI
+import Combine
+
+struct {{ module_info.name }}ContentView<{{ module_info.name }}Presenter: {{ module_info.name }}PresenterProtocol>: View {
+
+    @ObservedObject var presenter: {{ module_info.name }}Presenter
+
+    var body: some View {
+        VStack {
+            HStack {
+                Text("{{ module_info.name }}ViewContent")
+            }
+        }
+        .onAppear(perform: presenter.onAppear)
+    }
+
+}
+
+struct {{ module_info.name }}ContentView_Previews: PreviewProvider {
+
+    let resolver = DIResolver()
+
+    static var previews: some View {
+        resolver.present{{ module_info.name }}ContentView()
+    }
+}

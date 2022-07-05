@@ -1,0 +1,28 @@
+{% include 'header' %}
+
+import Combine
+import Foundation
+
+final class {{ module_info.name }}Presenter: BasePresenter {
+
+    private let wireFrame: {{ module_info.name }}WireFrameProtocol
+    private let interactor: {{ module_info.name }}InteractorProtocol
+
+    @Published var isLoading: Bool = false
+
+    init(wireFrame: {{ module_info.name }}WireFrameProtocol, interactor: {{ module_info.name }}InteractorProtocol) {
+        self.interactor = interactor
+        self.wireFrame = wireFrame
+    }
+
+}
+
+// MARK: - {{module_info.name}}PresenterProtocol
+
+extension {{ module_info.name }}Presenter: {{ module_info.name }}PresenterProtocol {
+
+    func onAppear() {
+        isLoading = true
+    }
+
+}

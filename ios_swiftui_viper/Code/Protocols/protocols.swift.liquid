@@ -1,0 +1,29 @@
+{% include 'header' %}
+
+import UIKit
+
+// PRESENTER -> VIEW
+
+protocol {{ module_info.name }}ContentViewProtocol: BaseViewProtocol {
+
+    func setupInitialState()
+
+}
+
+// VIEW -> PRESENTER
+
+protocol {{ module_info.name }}PresenterProtocol: BasePresenterProtocol, ObservableObject {
+
+    var isLoading: Bool { get set }
+
+    func onAppear()
+
+}
+
+// PRESENTER -> WIREFRAME
+
+protocol {{ module_info.name }}WireFrameProtocol: BaseWireFrameProtocol { }
+
+// PRESENTER -> INTERACTOR
+
+protocol {{ module_info.name }}InteractorProtocol: BaseInteractorProtocol { }

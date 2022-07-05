@@ -1,0 +1,25 @@
+{% include 'header' %}
+
+import SwiftUI
+
+// MARK: - {{ module_info.name }}
+
+protocol {{ module_info.name }}Protocol {
+
+    func present{{ module_info.name }}ContentView() -> some View
+
+}
+
+extension DIResolver: {{ module_info.name }}Protocol {
+
+    func present{{ module_info.name }}ContentView() -> some View {
+
+        let interactor = {{ module_info.name }}Interactor()
+        let wireFrame = {{ module_info.name }}WireFrame(resolver: self)
+        let presenter = {{ module_info.name }}Presenter(wireFrame: wireFrame, interactor: interactor)
+        let view = {{ module_info.name }}ContentView(presenter: presenter)
+
+        return view
+    }
+
+}
