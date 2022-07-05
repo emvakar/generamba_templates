@@ -6,11 +6,16 @@ import SwiftUI
 
 protocol {{ module_info.name }}Protocol {
 
-    func present{{ module_info.name }}ContentView() -> some View
+    @ViewBuilder
+    func present{{ module_info.name }}ContentView() -> any View
 
 }
 
 extension DIResolver: {{ module_info.name }}Protocol {
+
+    func present{{ module_info.name }}ContentView() -> any View {
+        present{{ module_info.name }}ContentView()
+    }
 
     func present{{ module_info.name }}ContentView() -> some View {
 

@@ -20,7 +20,7 @@ struct {{ module_info.name }}ContentView<{{ module_info.name }}Presenter: {{ mod
 
 struct {{ module_info.name }}ContentView_Previews: PreviewProvider {
 
-    let resolver = DIResolver()
+    static let resolver = DIResolver()
 
     static var previews: some View {
         resolver.present{{ module_info.name }}ContentView()
