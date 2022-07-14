@@ -1,5 +1,6 @@
 {% include 'header' %}
 
+import UIKit
 import SwiftUI
 
 // MARK: - {{ module_info.name }}
@@ -8,10 +9,16 @@ protocol {{ module_info.name }}Protocol {
 
     @ViewBuilder
     func present{{ module_info.name }}ContentView() -> any View
+    func present{{ module_info.name }}ViewController() -> UIViewController
 
 }
 
 extension DIResolver: {{ module_info.name }}Protocol {
+
+    func present{{ module_info.name }}ViewController() -> UIViewController {
+        let hostController = UIHostingController(rootView: present{{ module_info.name }}ContentView())
+        return hostController
+    }
 
     func present{{ module_info.name }}ContentView() -> any View {
         present{{ module_info.name }}ContentView()

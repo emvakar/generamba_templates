@@ -15,7 +15,7 @@ code_files:
 - {name: Protocols/Protocols.swift, path: Code/Protocols/protocols.swift.liquid}
 
 # View layer
-- {name: View/ViewController.swift, path: Code/View/viewcontroller.swift.liquid}
+- {name: View/ContentView.swift, path: Code/View/viewcontroller.swift.liquid}
 
 # Presenter layer
 - {name: Presenter/Presenter.swift, path: Code/Presenter/presenter.swift.liquid}
