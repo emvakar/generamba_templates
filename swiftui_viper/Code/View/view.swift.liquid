@@ -1,0 +1,21 @@
+{% include 'header' %}
+
+import SwiftUI
+import SwiftfulRouting
+
+struct {{ module_info.name }}View: View {
+
+    @StateObject var presenter: {{ module_info.name }}Presenter
+
+    var body: some View {
+        Text("Hello, World!")
+    }
+
+}
+
+#Preview {
+    let interactor = {{ module_info.name }}Interactor()
+    return RouterView { router in
+        {{ module_info.name }}View(presenter: {{ module_info.name }}Presenter(router: {{ module_info.name }}Router(router: router), interactor: interactor))
+    }
+}

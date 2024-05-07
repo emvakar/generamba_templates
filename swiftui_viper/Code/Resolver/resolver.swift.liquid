@@ -1,0 +1,13 @@
+{% include 'header' %}
+
+import SwiftUI
+import SwiftfulRouting
+
+extension DIResolver {
+
+    func present{{ module_info.name }}Module(router: AnyRouter) -> {{ module_info.name }}View {
+        let interactor = {{ module_info.name }}Interactor()
+        return {{ module_info.name }}View(presenter: {{ module_info.name }}Presenter(router: {{ module_info.name }}Router(router: router), interactor: interactor))
+    }
+
+}

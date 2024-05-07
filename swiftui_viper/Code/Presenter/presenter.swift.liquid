@@ -1,0 +1,19 @@
+{% include 'header' %}
+
+import Foundation
+import SwiftfulRouting
+
+@MainActor
+final class {{ module_info.name }}Presenter: ObservableObject {
+
+    private let router: {{ module_info.name }}RouterProtocol
+    private let interactor: {{ module_info.name }}InteractorProtocol
+
+    init(router: {{ module_info.name }}RouterProtocol, interactor: {{ module_info.name }}InteractorProtocol) {
+        self.router = router
+        self.interactor = interactor
+    }
+
+    deinit { }
+
+}

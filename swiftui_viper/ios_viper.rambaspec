@@ -1,0 +1,45 @@
+# Template information section
+name: "swiftui_viper"
+summary: "My VIPER model generator for SwiftUI"
+author: "Emil Karimov"
+version: "1.0.0"
+license: "MIT"
+
+# The declarations for code files
+code_files:
+
+# Resolver file
+- {name: +DIResolver.swift, path: Code/Resolver/resolver.swift.liquid}
+
+# View layer
+- {name: View/View.swift, path: Code/View/view.swift.liquid}
+
+# Presenter layer
+- {name: Presenter/Presenter.swift, path: Code/Presenter/presenter.swift.liquid}
+
+# Router
+- {name: Router/Router.swift, path: Code/Router/router.swift.liquid}
+
+# Interactor layer
+- {name: Interactor/Interactor.swift, path: Code/Interactor/interactor.swift.liquid}
+
+# The declarations for test files
+test_files:
+
+# Configurators tests
+# - {name: Resolver/ResolverTests.swift, path: Code/Tests/resolver_tests.swift.liquid}
+
+# View tests
+# - {name: View/ViewTests.swift, path: Code/Tests/view_tests.swift.liquid}
+
+# Presenter tests
+# - {name: Presenter/PresenterTests.swift, path: Code/Tests/presenter_tests.swift.liquid}
+
+# Router tests
+# - {name: WireFrame/WireFrameTests.swift, path: Code/Tests/wireframe_tests.swift.liquid}
+
+# Interactor tests
+# - {name: Interactor/InteractorTests.swift, path: Code/Tests/interactor_tests.swift.liquid}
+
+# Template dependencies
+dependencies:

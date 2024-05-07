@@ -1,0 +1,18 @@
+{% include 'header' %}
+
+import Foundation
+import SwiftfulRouting
+
+protocol {{ module_info.name }}RouterProtocol {
+
+}
+
+struct {{ module_info.name }}Router {
+
+    let router: AnyRouter
+
+}
+
+extension {{ module_info.name }}Router: {{ module_info.name }}RouterProtocol {
+
+}
