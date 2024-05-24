@@ -1,0 +1,30 @@
+{% include 'header' %}
+
+import UIKit
+
+// MARK: - {{ module_info.name }}
+
+protocol {{ module_info.name }}Protocol {
+
+    func present{{ module_info.name }}ViewController() -> UIViewController
+
+}
+
+extension DIResolver: {{ module_info.name }}Protocol {
+
+    func present{{ module_info.name }}ViewController() -> UIViewController {
+        let interactor = {{ module_info.name }}Interactor()
+        let wireFrame = {{ module_info.name }}WireFrame(resolver: self)
+        let presenter = {{ module_info.name }}Presenter(wireFrame: wireFrame, interactor: interactor)
+
+        let viewModel = {{ module_info.name }}ViewModel(performAction: presenter.perform)
+        let view = {{ module_info.name }}UIView(viewModel: viewModel)
+        let viewController = {{ module_info.name }}ViewController(rootView: view)
+
+        presenter.viewModel = viewModel
+        presenter.view = viewController
+        viewController.presenter = presenter
+        return viewController
+    }
+
+}

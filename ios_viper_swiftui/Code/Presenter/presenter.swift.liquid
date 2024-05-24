@@ -1,0 +1,27 @@
+{% include 'header' %}
+
+class {{ module_info.name }}Presenter: BasePresenter {
+
+    var view: {{ module_info.name }}ViewProtocol!
+    var viewModel: {{ module_info.name }}ViewModelProtocol!
+    var wireFrame: {{ module_info.name }}WireFrameProtocol
+    var interactor: {{ module_info.name }}InteractorProtocol
+
+    init(wireFrame: {{ module_info.name }}WireFrameProtocol,
+	 interactor: {{ module_info.name }}InteractorProtocol) {
+        self.interactor = interactor
+        self.wireFrame = wireFrame
+    }
+
+    func perform(action: {{ module_info.name }}Action) {
+        switch action {
+        case .viewLoad:
+            print("view Did Appear")
+        }
+    }
+
+}
+
+// MARK: - {{ module_info.name }}PresenterProtocol
+
+extension {{ module_info.name }}Presenter: {{ module_info.name }}PresenterProtocol { }

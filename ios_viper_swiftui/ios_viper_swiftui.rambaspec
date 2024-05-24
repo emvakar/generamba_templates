@@ -1,0 +1,54 @@
+# Template information section
+name: "ios_viper_swiftui"
+summary: "MY VIPER MODEL GENERATOR"
+author: "Nikita Tatarnikov"
+version: "1.1.1"
+license: "MIT"
+
+# The declarations for code files
+code_files:
+
+# Resolver file
+- {name: +DIResolver.swift, path: Code/Resolver/Resolver.swift.liquid}
+
+# Protocols layer
+- {name: Protocols/Protocols.swift, path: Code/Protocols/protocols.swift.liquid}
+
+# View model
+- {name: View/ViewModel/ViewModel.swift, path: Code/View/Model/viewModel.swift.liquid}
+
+# View layer
+- {name: View/UIView.swift, path: Code/View/uiview.swift.liquid}
+
+# ViewController layer
+- {name: View/ViewController.swift, path: Code/View/viewcontroller.swift.liquid}
+
+# Presenter layer
+- {name: Presenter/Presenter.swift, path: Code/Presenter/presenter.swift.liquid}
+
+# WireFrame
+- {name: WireFrame/WireFrame.swift, path: Code/WireFrame/wireframe.swift.liquid}
+
+# Interactor layer
+- {name: Interactor/Interactor.swift, path: Code/Interactor/interactor.swift.liquid}
+
+# The declarations for test files
+test_files:
+
+# Configurators tests
+- {name: Resolver/ResolverTests.swift, path: Code/Tests/resolver_tests.swift.liquid}
+
+# View tests
+- {name: View/ViewTests.swift, path: Code/Tests/view_tests.swift.liquid}
+
+# Presenter tests
+- {name: Presenter/PresenterTests.swift, path: Code/Tests/presenter_tests.swift.liquid}
+
+# Router tests
+- {name: WireFrame/WireFrameTests.swift, path: Code/Tests/wireframe_tests.swift.liquid}
+
+# Interactor tests
+- {name: Interactor/InteractorTests.swift, path: Code/Tests/interactor_tests.swift.liquid}
+
+# Template dependencies
+dependencies:
