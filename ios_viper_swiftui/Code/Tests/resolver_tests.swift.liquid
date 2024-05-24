@@ -7,18 +7,15 @@ class {{ module_info.name }}ResolverTests: BaseTests {
 
     override func setUpWithError() throws {
         try super.setUpWithError()
-
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
     override func tearDownWithError() throws {
         try super.tearDownWithError()
-
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
     func testResolverModuleForViewController() {
-
         // Given
         let resolver = DIResolver()
 
@@ -27,25 +24,29 @@ class {{ module_info.name }}ResolverTests: BaseTests {
 
         // Then
         XCTAssertNotNil(module, "{{ module_info.name }}ViewController is nil after configuration")
-        XCTAssertTrue(module?.presenter is {{ module_info.name }}Presenter, "presenter is not {{ module_info.name }}Presenter")
+        XCTAssertTrue(module?.presenter is {{ module_info.name }}Presenter, "Presenter is not {{ module_info.name }}Presenter")
 
         let presenter: {{ module_info.name }}Presenter? = module?.presenter as? {{ module_info.name }}Presenter
-        XCTAssertNotNil(presenter?.view, "view in {{ module_info.name }}Presenter is nil after configuration")
-        XCTAssertNotNil(presenter?.wireFrame, "router in {{ module_info.name }}Presenter is nil after configuration")
+        XCTAssertNotNil(presenter?.viewModel, "ViewModel in {{ module_info.name }}Presenter is nil after configuration")
+        XCTAssertNotNil(presenter?.view, "View in {{ module_info.name }}Presenter is nil after configuration")
+        XCTAssertTrue(presenter?.interactor is {{ module_info.name }}Interactor, "Interactor is not {{ module_info.name }}Interactor")
         XCTAssertTrue(presenter?.wireFrame is {{ module_info.name }}WireFrame, "WireFrame is not {{ module_info.name }}WireFrame")
-        XCTAssertTrue(presenter?.interactor is {{ module_info.name }}Interactor, "{{ module_info.name }}Interactor is not {{ module_info.name }}Interactor")
 
         let interactor: {{ module_info.name }}Interactor? = presenter?.interactor as? {{ module_info.name }}Interactor
         XCTAssertNotNil(interactor, "{{ module_info.name }}Interactor is nil after configuration")
+        
+        let wireFrame: {{ module_info.name }}WireFrame? = presenter?.wireFrame as? {{ module_info.name }}WireFrame
+        XCTAssertNotNil(wireFrame, "{{ module_info.name }}WireFrame is nil after configuration")
+        
+        let viewModel: {{ module_info.name }}ViewModel? = presenter?.viewModel as? {{ module_info.name }}ViewModel
+        XCTAssertNotNil(viewModel, "{{ module_info.name }}ViewModel is nil after configuration")
     }
 
-    class {{ module_info.name }}ViewControllerMock: BaseViewController, {{ module_info.name }}ViewProtocol {
-
+    class {{ module_info.name }}ViewControllerMock: UIHostingController<{{ module_info.name }}UIView>, {{ module_info.name }}ViewProtocol {
         var setupInitialStateDidCall = false
 
         func setupInitialState() {
             setupInitialStateDidCall = true
         }
     }
-
 }

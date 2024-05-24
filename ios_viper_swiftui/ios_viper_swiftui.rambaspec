@@ -41,6 +41,9 @@ test_files:
 # View tests
 - {name: View/ViewTests.swift, path: Code/Tests/view_tests.swift.liquid}
 
+# ViewModel tests
+- {name: View/ViewModelTests.swift, path: Code/Tests/viewModel_tests.swift.liquid}
+
 # Presenter tests
 - {name: Presenter/PresenterTests.swift, path: Code/Tests/presenter_tests.swift.liquid}
 
