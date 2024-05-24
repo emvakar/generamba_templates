@@ -15,7 +15,7 @@ class {{ module_info.name }}Presenter: BasePresenter {
 
     func perform(action: {{ module_info.name }}Action) {
         switch action {
-        case .viewLoad:
+        case .viewDidAppear:
             print("view Did Appear")
         }
     }
