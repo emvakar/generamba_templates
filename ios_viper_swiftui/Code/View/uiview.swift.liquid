@@ -6,7 +6,7 @@ struct {{ module_info.name }}UIView: View {
     @State var viewModel: {{ module_info.name }}ViewModel
 
     var body: some View {
-        Text("Filters")
+        Text("{{ module_info.name }}")
             .onAppear {
                 viewModel.perform(action: .viewDidAppear)
             }

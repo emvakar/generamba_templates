@@ -4,14 +4,10 @@ import UIKit
 import SwiftUI
 
 class {{ module_info.name }}ViewController: UIHostingController<{{ module_info.name }}UIView> {
-    
-    enum Texts {
-        static let title = "{{ module_info.name }}"
-    }
 
     var presenter: {{ module_info.name }}PresenterProtocol!
 
-    // MARK: - Actions
+    // MARK: - Life cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +26,7 @@ extension {{ module_info.name }}ViewController: {{ module_info.name }}ViewProtoc
 private extension {{ module_info.name }}ViewController {
     
     func setupNavItems() {
-        title = Texts.title
+        title = "{{ module_info.name }}"
     }
     
 }
