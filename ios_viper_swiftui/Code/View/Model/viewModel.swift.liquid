@@ -1,0 +1,21 @@
+{% include 'header' %}
+
+import Observation
+
+enum {{ module_info.name }}Action {
+    case viewDidAppear
+}
+
+@Observable
+final class {{ module_info.name }}ViewModel: {{ module_info.name }}ViewModelProtocol {
+    private let performAction: ({{ module_info.name }}Action) -> Void
+    
+    init(performAction: @escaping ({{ module_info.name }}Action) -> Void) {
+        self.performAction = performAction
+    }
+    
+    func perform(action: {{ module_info.name }}Action) {
+        performAction(action)
+    }
+    
+}

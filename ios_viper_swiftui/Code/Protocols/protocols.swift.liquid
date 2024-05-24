@@ -1,0 +1,23 @@
+{% include 'header' %}
+
+import UIKit
+
+// PRESENTER -> VIEWMODEL
+
+protocol {{ module_info.name }}ViewModelProtocol: AnyObject { }
+
+// PRESENTER -> VIEW
+
+protocol {{ module_info.name }}ViewProtocol { }
+
+// VIEW -> PRESENTER
+
+protocol {{ module_info.name }}PresenterProtocol: BasePresenterProtocol { }
+
+// PRESENTER -> WIREFRAME
+
+protocol {{ module_info.name }}WireFrameProtocol: BaseWireFrameProtocol { }
+
+// PRESENTER -> INTERACTOR
+
+protocol {{ module_info.name }}InteractorProtocol: BaseInteractorProtocol { }

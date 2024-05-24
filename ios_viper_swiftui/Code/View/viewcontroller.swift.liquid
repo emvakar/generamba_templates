@@ -1,0 +1,33 @@
+{% include 'header' %}
+
+import UIKit
+import SwiftUI
+
+class {{ module_info.name }}ViewController: UIHostingController<{{ module_info.name }}UIView> {
+
+    var presenter: {{ module_info.name }}PresenterProtocol!
+
+    // MARK: - Life cycle
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        setupNavItems()
+    }
+
+}
+
+// MARK: - {{ module_info.name }}ViewProtocol
+
+extension {{ module_info.name }}ViewController: {{ module_info.name }}ViewProtocol { }
+
+// MARK: - Private
+
+private extension {{ module_info.name }}ViewController {
+    
+    func setupNavItems() {
+        title = "{{ module_info.name }}"
+    }
+    
+}
+

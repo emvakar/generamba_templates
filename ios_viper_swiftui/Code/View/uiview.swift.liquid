@@ -1,0 +1,19 @@
+{% include 'header' %}
+
+import SwiftUI
+
+struct {{ module_info.name }}UIView: View {
+    @State var viewModel: {{ module_info.name }}ViewModel
+
+    var body: some View {
+        Text("{{ module_info.name }}")
+            .onAppear {
+                viewModel.perform(action: .viewDidAppear)
+            }
+    }
+
+}
+
+#Preview {
+    {{ module_info.name }}UIView(viewModel: .init(performAction: { _ in }))
+}
