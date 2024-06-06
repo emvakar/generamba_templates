@@ -2,8 +2,8 @@
 
 class {{ module_info.name }}Presenter: BasePresenter {
 
-    var view: {{ module_info.name }}ViewProtocol!
-    var viewModel: {{ module_info.name }}ViewModelProtocol!
+    weak var view: {{ module_info.name }}ViewProtocol?
+    weak var viewModel: {{ module_info.name }}ViewModelProtocol?
     var wireFrame: {{ module_info.name }}WireFrameProtocol
     var interactor: {{ module_info.name }}InteractorProtocol
 
